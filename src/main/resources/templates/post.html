@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Posts</title>
+</head>
+<body>
+<h1>Posts</h1>
+<a href="/social/new">ADD  New Post</a>
+
+<div th:each="post:${posts}">
+<h2 th:text="${post.content}"></h2>
+<ul>
+<li th:each="commet:${post.content}" th:text="${commet.text}"></li>
+</ul>
+
+<form th:action="@{/posts/{postId}/commet(postId=${post.id})}" method="post">
+<input type="text" name="text" placeholder="Add commet">
+<button type="submit">Add Commet</button>
+</form> 
+</div>
+
+</body>
+</html>

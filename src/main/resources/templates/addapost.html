@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>New Post</title>
+</head>
+<body>
+    <h1>New Post</h1>
+    <form th:action="@{/social/new}" method="post">
+        <textarea name="content" placeholder="Write something"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html> 
